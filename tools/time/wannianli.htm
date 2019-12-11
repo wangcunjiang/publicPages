@@ -1175,11 +1175,33 @@ function r(hval) {
 		<P></P>
 		<HR width="90%" color=#cccccc noShade SIZE=1>
 		<FONT style="FONT-SIZE: 9pt" face=ARIAL size=2>阳历中<FONT	color=red>红色</FONT>/<FONT color=green>绿色</FONT><FONT color=black>表示节假日，农历中<FONT color=green>绿色</FONT>表示为24节气日，<FONT color=red>红色</FONT>表示为传统节日，<FONT	color=blue>蓝色</FONT>则表示为公众节假日<BR> 
+		<FONT style="FONT-SIZE: 9pt" face=ARIAL size=2>快捷键：<FONT color=red>上</FONT>上月 <FONT color=red>下</FONT>下月 <FONT color=red>左</FONT>上年 <FONT color=red>右</FONT>下年<BR>
 <script
 	type="text/javascript">
 <!--
-	initial()
-//-->
+	document.onkeyup = function(evt){
+		var e = evt || window.event || arguments.callee.caller.arguments[0];
+		// alert(e.keyCode)
+		switch(e.keyCode){
+		 	case 37: //左
+			pushBtm('YU')
+		 	break;
+			case 38: //上
+			pushBtm('MU')
+			break;
+			case 39:  //右
+			pushBtm('YD')
+			break;
+			case 40:  //下
+			pushBtm('MD')
+			break;
+			case 32:  //空格
+			pushBtm('')
+			break;
+		}
+	}
+	initial();
+-->
 </script>
 	</CENTER>
 
