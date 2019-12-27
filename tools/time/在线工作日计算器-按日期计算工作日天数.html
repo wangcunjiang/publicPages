@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <title>在线工作日计算 - fynas实用小工具</title>
+        <meta name="description" content="在线工作日计算器-按日期计算工作日天数">
+<meta name="keyword" content="在线，工作日，法定假日">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <!-- styles -->
+        <link href="//cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" media="screen" rel="stylesheet" type="text/css">
+<link href="//cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" media="screen" rel="stylesheet" type="text/css">
+<link href="/css/base/jquery-ui.min.css" media="screen" rel="stylesheet" type="text/css">
+<link href="/css/style.css" media="screen" rel="stylesheet" type="text/css">
+<link href="/img/favicon.ico" rel="shortcut icon" type="image/vnd.microsoft.icon">
+        <!-- Scripts -->
+        <!--[if lt IE 9]><script type="text/javascript" src="//cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script><![endif]-->
+<script type="text/javascript" src="//cdn.bootcss.com/jquery/3.1.1/jquery.min.js"></script>
+<script type="text/javascript" src="//cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="/js/jquery-ui.min.js"></script>    </head>
+    <body>
+        <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="/">
+                        <img src="/img/logo.png" height="28" alt="3.0.1"/>&nbsp;fynas.com
+                    </a>
+                </div>
+                <div class="collapse navbar-collapse">
+                    <ul class="nav navbar-nav">
+                        <li class="active"><a href="/workday">工作日计算</a></li>
+                        <li class="active"><a href="/cny">金额大小写转换</a></li>
+                        <li class="active"><a href="/ua">手机UserAgent库</a></li>
+                        <li class="active"><a href="/system-drawing-color">WEB标准颜色</a></li>
+                        <li class="active"><a href="//article.fynas.com">分享笔记</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <div id="loading"><span>正在加载...</span></div>
+        <div class="container">
+            
+<p class="bg-info">已支持2020年工作日计算，感谢大家支持</p>
+<form action="/workday?" method="get" role="form">
+    <fieldset>
+        <h3>按日期计算工作日天数</h3>
+        <div class="form-group">
+            <label for="start-date">开始日期(如2010-01-01，含当天)：</label>
+            <input type="date" class="form-control" id="start-date" placeholder="YYYY-MM-DD"/>
+        </div>
+        <div class="form-group">
+            <label for="end-date">结束日期(如2020-12-31，含当天)：</label>
+            <input type="date" class="form-control" id="end-date" placeholder="YYYY-MM-DD"/>
+        </div>
+
+        <p>计算结果：<h2 id="workday-result">----</h2></p>
+        <p>（总天数<b id="total"></b>-周末<b id="weekend"></b>-法定假日<b id="holiday"></b>+周末调班<b id="extra"></b>）</p>
+        <p>无周末调班金融系统为：<b id="financial"></b>天</p>
+        <div>
+            <a class="btn btn-success" href="javascript:void(0)" id="compute-workday">计算工作日</a>&nbsp;
+            <a class="btn btn-default" href="javascript:void(0)" id="this-month">本月</a>&nbsp;
+            <a class="btn btn-default" href="javascript:void(0)" id="next-month">下月</a>&nbsp;
+            <a class="btn btn-link" href="/workday/month">按月汇总</a>
+        </div>
+    </fieldset>
+</form>
+<br />
+<p><h4><a href="/workday/due" target="_self">我想按天数得出结束工作日日期&raquo;</a></h4>如：7个工作日后是哪天？</p>
+<br />
+<div id="donate">
+    <img height="24px" src="/img/donate_heart.png" />
+    打赏以帮助支撑服务器运行，感谢支持！<a href="//article.fynas.com/feedback">计算错误或功能改进点此留言反馈</a>
+    <br /><img height="300px" src="/img/fynas_donate.png" alt="感谢捐赠"/>
+</div>
+            <hr>
+            <footer>
+                &copy; 2012 - 2019 fynas.com&nbsp;&nbsp;&nbsp;
+                <a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=35082102000138" target="_blank"><img src="/img/beian.png" height="16px" /> 闽公网安备 35082102000138号</a>&nbsp;&nbsp;&nbsp;
+                <a href="http://www.miitbeian.gov.cn/" target="_blank">闽ICP备16036341号-1</a>
+            </footer>
+        </div>
+        <div style="width:300px;margin:0 auto; padding:5px 0;">
+
+        </div>
+
+        <div id="dialog" title="Info"></div>
+        <script type="text/javascript" src="/js/common.js"></script>
+<script type="text/javascript" src="/js/application/workday.js"></script>        <script type="text/javascript">
+            var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+            document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F0fa7b8c467469bd8f2eaddd5dc1d440d' type='text/javascript'%3E%3C/script%3E"));
+        </script>
+    </body>
+</html>
